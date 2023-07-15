@@ -1,0 +1,17 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="80sp"
+    android:background="@drawable/toolbar_gradient"
+    android:gravity="bottom">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        app:titleTextColor="#F2FA5A"
+        android:id="@+id/toolbar"
+        android:theme="@style/ToolbarTheme"
+        />
+
+</LinearLayout>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingBottom="6dp">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/main_cardView"
+        android:layout_marginTop="12dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        app:cardCornerRadius="6dp"
+        app:cardElevation="6dp"
+        app:contentPaddingLeft="12dp"
+        app:contentPaddingRight="12dp"
+        app:contentPaddingTop="12dp"
+        app:contentPaddingBottom="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:rippleColor="@color/secondary">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/sourcesanspro_black"
+                    android:textColor="#DA212121"
+                    android:textSize="16sp"
+                    android:text="How to create a PulseAudio server?"
+            />
+
+
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/productsans_regular"
+                    android:text="First, you need pactl (usually it's installed)"
+                    android:layout_marginTop="8dp"
+                    android:textColor="#1B1A1A" />
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/productsans_regular"
+                    android:text="- Get the name of your source device"
+                    android:layout_marginTop="4dp"
+                    android:textColor="#1B1A1A" />
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/main_command1"
+                    android:fontFamily="@font/robotomono_regular"
+                    android:text="pactl list | grep 'Monitor Source'"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:layout_marginTop="2dp"
+                    android:background="@drawable/shape_command_tv"
+                    android:layout_marginStart="12dp"
+                    android:textColor="#1B1A1A" />
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/productsans_regular"
+                    android:text="- Then"
+                    android:layout_marginTop="4dp"
+                    android:textColor="#1B1A1A" />
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/robotomono_regular"
+                    android:id="@+id/main_command"
+                    android:background="@drawable/shape_command_tv"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:text="pactl load-module module-simple-protocol-tcp rate=48000 format=s16le channels=2 &lt;Source Device Name&gt; record=true port=8000"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginStart="12dp"
+                    android:textColor="#1B1A1A" />
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/productsans_regular"
+                    android:text="- Enter your PulseAudio server's IP address in the IP_ADDRESS field and set the port to 8000 in the PORT field if you haven't modified the port in the previous command."
+                    android:layout_marginTop="4dp"
+                    android:textColor="#1B1A1A" />
+
+
+
+
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</FrameLayout>
